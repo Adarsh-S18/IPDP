@@ -4555,12 +4555,58 @@ fieldset:disabled .btn {
   white-space: nowrap;
 }
 
+.navbar-brandd {
+  padding-top: 0.18213rem;
+  padding-bottom: 0.18213rem;
+  /* text-align: right; */
+  float: right;
+  margin-right: 1rem;
+  font-size: calc(1.26738rem + 0.20859vw);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.navimage{
+  height: 140px;
+}
+
 @media (min-width: 1200px) {
   .navbar-brand {
     font-size: 1.42383rem;
   }
+  .navbar-brandd {
+    font-size: 1.42383rem;
+  }
 }
 
+@media (max-width: 380px) {
+  .navbar-brand {
+    font-size: 1px;
+  }
+  .navimage{
+    height: 130px;
+  }
+  .navbar-brandd {
+    font-size: 1.42383rem;
+  }
+}
+
+@media (max-width: 357px) {
+  .navbar-brand {
+    font-size: 1px;
+  }
+  .navimage{
+    height: 100px;
+  }
+  .navbar-brandd {
+    font-size: 1.42383rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .navimage{
+    height: 90px;
+  }
+}
 .navbar-brand:hover, .navbar-brand:focus {
   text-decoration: none;
 }
