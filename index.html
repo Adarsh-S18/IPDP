@@ -524,6 +524,7 @@ $(document).ready(function() {
                         title: 'Thank you!',
                         text: 'Your submission was successful!'
                     });
+                    document.getElementById('myForm').reset();
                 })
                 .fail(function(xhr, status, error) {
                     console.error(xhr, status, error);

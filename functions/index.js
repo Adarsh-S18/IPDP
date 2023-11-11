@@ -46,8 +46,8 @@ exports.sendMailOverHTTP = functions.https.onRequest((req, res) => {
                             <p>
                                <b>Email: </b>${req.body.email}<br>
                                <b>First Name: </b>${req.body.firstName}<br>
-                                <b>Last Mobile: </b>${req.body.lastName}<br>
-                                <b>Mobile: </b>${req.body.phone}<br>
+                                <b>Last Name: </b>${req.body.lastName}<br>
+                                <b>Mobile Number: </b>${req.body.phone}<br>
                                <b>Message: </b>${req.body.message}<br>
                             </p>`
     };
