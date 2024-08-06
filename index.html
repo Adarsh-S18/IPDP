@@ -466,7 +466,7 @@
   <div class="row mb-3 text-center">  
     <div class="col-md-4 mb-5 mt-3">
       <div class="card ">
-        <h1 style="font-size: 45px;">25  </h1>
+        <h1 style="font-size: 45px;">35  </h1>
         <p>Batches</p>
       </div>  
     </div>
@@ -479,7 +479,7 @@
     </div>
     <div class="col-md-4 mb-5 mt-3">
       <div class="card ">
-        <h1 style="font-size: 45px;">250  </h1>
+        <h1 style="font-size: 45px;">350  </h1>
         <p>Certified Internpreneurs</p>
       </div>  
     </div>
@@ -500,6 +500,7 @@ $(document).ready(function() {
 
         // Check if any field is empty
         if (leadName && leadLastName && leadEmail && leadMobile && leadMessage) {
+          window.location.href = 'thank-you.html';
             var settings = {
                 url: "https://us-central1-ipdp-7baf7.cloudfunctions.net/sendMailOverHTTP",
                 method: "POST",
