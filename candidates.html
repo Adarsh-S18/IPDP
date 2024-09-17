@@ -194,13 +194,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item" style="padding-right:30px;">
-          <a class="nav-link" href="index.html" style="font-size: 16px; font-weight: 600;">Home</a>
+          <a class="nav-link" href="index.html" style="font-size: 17px; font-weight: 700;">Home</a>
         </li>
         <li class="nav-item" style="padding-right:30px;">
-          <a class="nav-link" href="candidates.html" style="font-size: 16px; font-weight: 600; color: black;">Hall Of Fame</a>
+          <a class="nav-link" href="candidates.html" style="font-size: 17px; font-weight: 700; color: black;">Hall Of Fame</a>
         </li>
         <li class="nav-item" style="background-color: #570080; border-radius: 15px;">
-          <a class="nav-link" id="opRegMod" style="font-size: 16px; font-weight: 600; color: white; cursor: pointer;">Apply Now</a>
+          <a class="nav-link" id="openModal" style="font-size: 16px; font-weight: 600; color: white; cursor: pointer;">Apply Now</a>
         </li>
       </ul>
     </div>
@@ -212,25 +212,21 @@
         <div class="modal-content">
           <span class="close">&times;</span>
           <h2>Registration Form</h2>
-          <form>
+          <form id="registrationForm">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required>
+            
             <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" required>      
-            <label for="email">Current Profession / Education</label>
-            <input type="email" id="email" name="email" required>
-            <label for="email">Location</label>
-            <input type="email" id="email" name="email" required>
-            <label for="email">Reference(Optional)</label>
-            <input type="email" id="email" name="email">
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="profession">Current Profession / Education</label>
+            <input type="text" id="profession" name="profession" required>
       
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" required>
       
-            <!-- <label for="batch">Select Batch:</label>
-            <select id="batch" name="batch" required>
-              <option value="batch1">Batch 1</option>
-              <option value="batch2">Batch 2</option>
-              <option value="batch3">Batch 3</option>
-            </select> -->
+            <label for="reference">Reference (Optional)</label>
+            <input type="text" id="reference" name="reference">
       
             <input type="submit" value="Register">
           </form>
@@ -475,6 +471,72 @@
             modal.style.display = "none";
           }
         }
+
+
+        $(document).ready(function() {
+    // When the form is submitted
+    $('#registrationForm').submit(function(event) {
+        event.preventDefault(); // Prevents default form submission
+
+        // Get values from the form fields
+        var name = $('#name').val();
+        var phone = $('#phone').val();
+        var profession = $('#profession').val();
+        var location = $('#location').val();
+        var reference = $('#reference').val(); // Optional field
+
+        // Check if all required fields are filled
+        if (name && phone && profession && location) {
+            // Create settings for AJAX request
+            var settings = {
+              url: "https://us-central1-ipdp-7baf7.cloudfunctions.net/sendMailOverHTTP",
+              method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                data: JSON.stringify({
+                    "name": name,
+                    "phone": phone,
+                    "profession": profession,
+                    "location": location,
+                    "reference": reference // Optional field
+                })
+            };
+
+            $.ajax(settings)
+                .done(function(response) {
+                    console.log(response);
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Registration Successful',
+                        text: 'Thank you for registering!'
+                    });
+                    // Reset the form and close the modal
+                    $('#registrationForm')[0].reset();
+                    $('#registrationModal').hide();
+                })
+                .fail(function(xhr, status, error) {
+                    console.error(xhr, status, error);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Registration Failed',
+                        text: 'There was an error submitting your registration. Please try again.'
+                    });
+                });
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Please fill in all required fields!'
+            });
+        }
+    });
+
+    // Close modal when the close button is clicked
+    $('.close').click(function() {
+        $('#registrationModal').hide();
+    });
+});
       </script>
     
 </body>
