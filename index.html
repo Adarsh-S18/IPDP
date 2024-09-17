@@ -2,6 +2,7 @@
 <html lang="en-US" dir="ltr">
 
   <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/0/U5z2k5Kkl6IS+7boICeg43z5bEj/lRCGtvjN" crossorigin="anonymous">
     <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -33,6 +34,513 @@
     <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png"> -->
     <meta name="theme-color" content="#ffffff">
     <link href="assets/css/theme.css" rel="stylesheet" />
+<style>
+  .finishing-school-section {
+    background-image: url('assets/img/ipdpbg.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+    overflow: hidden; /* Prevent unwanted scrolling */
+    transition: height 0.3s ease; /* Smooth height transition */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1 {
+    color: white;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 197, 185, 0.422); /* Light pinkish background */
+    border-radius: 50%; /* Circular shape */
+    filter: blur(80px); /* Apply blur to the circle */
+}
+
+.logo-container img {
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    z-index: 1; /* Ensures image stays above the blur */
+}
+
+.logo-wrapper {
+    position: relative;
+    width: 400px; /* Adjust according to the size of your logo */
+    height: 400px;
+    margin: 0 auto;
+}
+
+.logo-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stat-item {
+    background-color: #ffa500;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    position: absolute;
+    text-align: center;
+}
+
+.stat-left {
+    top: 50%; 
+    left: -380px; /* Adjust to move button to the leftmost side */
+    transform: translateY(-50%);
+}
+
+.stat-right {
+    top: 50%;
+    right: -380px; /* Adjust to move button to the rightmost side */
+    transform: translateY(-50%);
+}
+
+.stat-bottom {
+    bottom: 20px; /* Adjust to move button to the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Responsive adjustments for large tablets (screens below 1176px) */
+@media (max-width: 1176px) {
+    .logo-wrapper {
+        width: 300px;
+        height: 300px;
+    }
+    .stat-left {
+        left: -361px;
+    }
+    .stat-right {
+        right: -360px;
+    }
+}
+
+/* Responsive adjustments for 840px width */
+@media (max-width: 840px) {
+    .finishing-school-section {
+        height: 930px; /* Increase height for better layout */
+    }
+}
+
+/* Responsive adjustments for screens below 1053px */
+@media (max-width: 1053px) {
+    .logo-wrapper {
+        width: 300px;
+        height: 300px;
+    }
+    .stat-left {
+        left: -344px;
+    }
+    .stat-right {
+        right: -324px;
+    }
+    .stat-bottom {
+        bottom: -5px; /* Adjust position at the bottom */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Adjustments for screens around 838px */
+@media (max-width: 838px) {
+    .finishing-school-section {
+        height: 980px; /* Increased height for screens around 838px */
+    }
+}
+
+/* Responsive adjustments for small screens (mobile phones) */
+@media (max-width: 1009px) {
+    .logo-wrapper {
+        width: 250px;
+        height: 250px;
+    }
+
+    /* Move buttons below the logo */
+    .stat-item {
+        position: relative;
+        margin: 20px auto;
+        display: block;
+        width: 80%; /* Adjust button size on small screens */
+        text-align: center;
+    }
+
+    /* Remove absolute positioning for smaller screens */
+    .stat-left, .stat-right, .stat-bottom {
+        position: relative;
+        left: 0;
+        right: 0;
+        top: auto;
+        bottom: auto;
+        transform: none;
+    }
+
+    .stat-left, .stat-right, .stat-bottom {
+        margin-top: 15px;
+    }
+
+    .finishing-school-section {
+        height: auto; /* Height for mobile screens */
+    }
+}
+
+
+
+
+
+
+.enroll-section {
+  display: flex;
+  align-items: center;
+  background-color: #f4a300; 
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  margin: 20px;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.section-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Ensure the content spans the entire width of the container */
+  flex-wrap: wrap; /* Allow the text and image to stack on smaller screens */
+}
+
+.text-content-ipdp {
+  flex: 1; /* Make the content take up space on the left */
+  text-align: left; /* Ensure text is left-aligned on larger screens */
+}
+
+.ipdp-content {
+  display: flex;
+  justify-content: center; /* Aligns the image to the right */
+  flex: 0 0 auto; /* Prevents the image section from shrinking */
+}
+
+.text-content-ipdp h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 34px;
+  font-weight: 900;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.text-content-ipdp p {
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  font-weight: normal;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.apply-button {
+  background-color: #570080; /* Dark purple */
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.apply-button:hover {
+  background-color: #7a00b5; /* Lighter purple on hover */
+}
+
+.ipdp-content img {
+  width: 200px;
+  height: auto;
+  margin-right: 150px; /* Adds space between the content and the image */
+}
+
+.enroll-section::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 50px;
+  height: 50px;
+  background-image: url('path_to_star_image'); /* Path to the star icon */
+  background-size: cover;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .ipdp-content img {
+    width: 150px; /* Reduce image size for medium screens */
+    margin-right: 50px; /* Less margin on medium screens */
+  }
+
+  .text-content-ipdp h2 {
+    font-size: 28px; /* Reduce heading size */
+  }
+
+  .apply-button {
+    padding: 8px 16px; /* Smaller button padding */
+    font-size: 14px; /* Smaller font size for the button */
+  }
+}
+
+@media (max-width: 768px) {
+  .section-box {
+    flex-direction: column; /* Stack the text and image vertically */
+    align-items: center; /* Center align them */
+  }
+
+  .text-content-ipdp {
+    text-align: center; /* Center text on smaller screens */
+    margin-bottom: 20px; /* Add space below text content */
+  }
+
+  .ipdp-content img {
+    width: 130px; /* Further reduce image size */
+    margin-right: 0; /* Remove margin to center the image */
+  }
+
+  .text-content-ipdp h2 {
+    font-size: 24px; /* Further reduce heading size */
+  }
+
+  .text-content-ipdp p {
+    font-size: 16px; /* Smaller paragraph font size */
+  }
+
+  .apply-button {
+    padding: 8px 14px; /* Slightly smaller button */
+    font-size: 14px; /* Smaller button text */
+  }
+}
+
+@media (max-width: 480px) {
+  .enroll-section {
+    padding: 10px; /* Less padding for mobile */
+    margin: 10px; /* Less margin for mobile */
+  }
+
+  .text-content-ipdp h2 {
+    font-size: 20px; /* Smaller heading for mobile */
+  }
+
+  .text-content-ipdp p {
+    font-size: 14px; /* Adjust paragraph font size */
+  }
+
+  .ipdp-content img {
+    width: 100px; /* Small image for mobile */
+  }
+
+  .apply-button {
+    padding: 6px 12px; /* Smaller button padding */
+    font-size: 12px; /* Smaller font size */
+  }
+}
+
+
+.unique-fts {
+    background-color: #4a0e71;
+    color: white;
+    padding: 40px 20px;
+  }
+  
+  .fts-container {
+    max-width: 1200px; /* Increased width for a larger layout */
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .fts-title {
+    font-size: 34px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .fts-boxes{
+    width: 100%;
+  }
+  .fts-box {
+    background-color: white;
+    color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1 1 300px; /* Adjusted for responsive layout */
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .fts-box h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .fts-box p {
+    font-size: 14px;
+  }
+
+  
+
+.unique-features {
+            background-color: #4a0e71;
+            color: white;
+            padding: 40px 20px;
+        }
+        .feature-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .feature-title {
+            font-size: 34px;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .feature-box {
+            background-color: white;
+            color: #333;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .feature-box h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .feature-box p {
+            font-size: 14px;
+        }
+        .crown-image {
+            position: absolute;
+            top: -70px;
+            right: 10px;
+            width: 100px;
+            height: auto;
+        }
+   /* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000; /* Ensures modal is on top of other elements */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Slightly darker overlay */
+}
+
+.modal-content {
+  background-color: white;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%; /* Default width for small screens */
+  max-width: 500px; /* Max width for larger screens */
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); /* Centers the modal vertically */
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus {
+  color: black;
+  cursor: pointer;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content label, .modal-content input, .modal-content select {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.modal-content input[type="text"], .modal-content input[type="email"], .modal-content input[type="tel"], .modal-content select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal-content input[type="submit"] {
+  background-color: #570080;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.modal-content input[type="submit"]:hover {
+  background-color: #450066;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+  }
+
+  .modal-content label, .modal-content input, .modal-content select {
+    font-size: 14px;
+  }
+
+  .modal-content input[type="submit"] {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+</style>
   </head>
 
   <body>
@@ -41,38 +549,292 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-      <nav class="navbar navbar-expand-lg navbar-light " data-navbar-on-scroll="data-navbar-on-scroll">
-        <div class="container">
-          <a class="navbar-brand" href="index.html"><img src="assets/img/ipdp-logo2.png" class="navimage"  alt="logo" /></a>
-          <a class="navbar-brandd" href="index.html"><img src="assets/img/16.png"  class="navimage" alt="logo" /></a>
-        </div>
-      </nav>
-      <!-- <section> -->
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-md-6 text-md-start text-center py-6">
-              <h1 class="mb-4 fs-8 fw-bold " style="color: #695aa6">India’s Exclusive Online Finishing School</h1>
-              <p class="mb-4 lead fw-bold font-weight:600">
-                to Enhance Careers for Students, Graduates, and Professionals
-              </p>
-              <p class="mb-6 lead">
-                Unlock Your Career Potential: Develop key skills, enhance employability, and become recruitment-ready with practical, hands-on experience. Improve your resume, LinkedIn profile, and build confidence in communication, professionalism, and leadership - all in one comprehensive online program.
-              </p>
-              <div class="text-center text-md-start">
-                <a class="btn btn-lg btn-primary me-3" href="https://wa.me/9746488303" role="button">Contact Us</a>
-              </div>
+   <!-- Bootstrap JS with Popper.js -->
+   <!-- Popper.js and Bootstrap JS (make sure this is at the end of the body tag) -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<nav class="navbar navbar-expand-lg navbar-light" data-navbar-on-scroll="data-navbar-on-scroll">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/img/ipdp-logo2.png" class="navimage" alt="logo" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item" style="padding-right:30px;">
+          <a class="nav-link" href="index.html" style="font-size: 16px; font-weight: 600;">Home</a>
+        </li>
+        <li class="nav-item" style="padding-right:30px;">
+          <a class="nav-link" href="candidates.html" style="font-size: 16px; font-weight: 600; color: black;">Hall Of Fame</a>
+        </li>
+        <li class="nav-item" style="background-color: #570080; border-radius: 15px;">
+          <a class="nav-link" id="opRegMod" style="font-size: 16px; font-weight: 600; color: white; cursor: pointer;">Apply Now</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <section class="finishing-school-section">
+      <div class="container">
+          <h1>India's Exclusive Online Finishing School</h1>
+          <p style="font-size: 1.4em;">to Enhance Careers for Students, Graduates, and Professionals</p>
+          <p style="font-size: 1em;">Unlock Your Career Potential: Develop key skills, enhance employability, and become recruitment-ready with practical, hands-on experience. Improve your resume, LinkedIn profile, and build confidence in communication, professionalism, and leadership in one comprehensive online program.</p>
+         
+          <div class="logo-wrapper">
+            <div class="stat-item stat-left">36 Batches Completed in 3 years</div>
+            <div class="stat-item stat-right">
+              ★★★★★<br>
+              5.0 Google Reviews</div>
+              <div class="stat-item stat-bottom">350+ InternPreneurs</div>
+            <div class="logo-container">
+                <img src="assets/img/ipdp-logo-4.png" alt="Internpreneur Logo">
             </div>
-            <div class="col-md-6 text-end">
-              <img class="pt-7 pt-md-0 img-fluid rounded " src="assets/img/10172518_8294.jpg" alt="Finishing School" />
-            </div>
-          </div>
         </div>
         
+        
+      </div>
+  </section>
+
+  
+  <div class="enroll-section">
+    <div class="section-box">
+      <div class="text-content-ipdp">
+        <h2>Enroll for the upcoming batch!</h2>
+        <p>Only 10 seats!</p>
+        <button class="apply-button" id="openModal">Apply Now</button>
+      </div>
+      <div class="ipdp-content">
+        <img src="assets/img/ipdp-logo2.png" alt="Internpreneur Logo">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+    // When the form is submitted
+    $('#registrationForm').submit(function(event) {
+        event.preventDefault(); // Prevents default form submission
+
+        // Get values from the form fields
+        var name = $('#name').val();
+        var phone = $('#phone').val();
+        var profession = $('#profession').val();
+        var location = $('#location').val();
+        var reference = $('#reference').val(); // Optional field
+
+        // Check if all required fields are filled
+        if (name && phone && profession && location) {
+            // Create settings for AJAX request
+            var settings = {
+              url: "https://us-central1-ipdp-7baf7.cloudfunctions.net/sendMailOverHTTP",
+              method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                data: JSON.stringify({
+                    "name": name,
+                    "phone": phone,
+                    "profession": profession,
+                    "location": location,
+                    "reference": reference // Optional field
+                })
+            };
+
+            // Send the AJAX request
+            $.ajax(settings)
+                .done(function(response) {
+                    console.log(response);
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Registration Successful',
+                        text: 'Thank you for registering!'
+                    });
+                    // Reset the form and close the modal
+                    $('#registrationForm')[0].reset();
+                    $('#registrationModal').hide();
+                })
+                .fail(function(xhr, status, error) {
+                    console.error(xhr, status, error);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Registration Failed',
+                        text: 'There was an error submitting your registration. Please try again.'
+                    });
+                });
+        } else {
+            // Show error if required fields are not filled
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Please fill in all required fields!'
+            });
+        }
+    });
+
+    // Close modal when the close button is clicked
+    $('.close').click(function() {
+        $('#registrationModal').hide();
+    });
+});
+
+  </script>
+  <!-- Modal -->
+  <div id="registrationModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Registration Form</h2>
+      <form id="registrationForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" required>
+        
+        <label for="profession">Current Profession / Education</label>
+        <input type="text" id="profession" name="profession" required>
+  
+        <label for="location">Location</label>
+        <input type="text" id="location" name="location" required>
+  
+        <label for="reference">Reference (Optional)</label>
+        <input type="text" id="reference" name="reference">
+  
+        <input type="submit" value="Register">
+      </form>
+    </div>
+  </div>
+  
+  
+  <section>
+    <h1 style="color: black; text-align: center;">Why choose Intern-Preneur?</h1>
+    <!-- <img style="width: 100px;" src="assets/img/crown.png" alt="Internpreneur Logo"> -->
+    <section class="finishing-school-section">
+      <div class="container">
+          <p style="font-size: 1.4em; text-align: left;">🎯Master Essential Skills</p>
+          <p style="font-size: 1em;text-align: left;">From communication and leadership to professionalism and confidence, Intern-Preneur sharpens your core abilities. We prepare you for career success, no matter your starting point.</p>
+          <p style="font-size: 1.4em; text-align: left;">🎯Tailored Career Guidance</p>
+          <p style="font-size: 1em;text-align: left;">Your journey is unique. Our experts provide personalized career guidance, from building your resume and optimizing LinkedIn to mastering interviews. Everything is designed to elevate your career prospects and enhance your employability.</p>
+          <p style="font-size: 1.4em; text-align: left;">🎯Experience Real Growth</p>
+          <p style="font-size: 1em;text-align: left;">Gain practical experience with a curriculum covering everything from job search strategies and professional branding to mental wellness. Our focus on real-world skills ensures you’re ready to succeed.</p>
+        
+        </div>
+         </section>
+  </section>
+  
+  <section class="unique-features">
+    <div class="feature-container">
+        <h2 class="feature-title">What makes Intern-Preneur unique?</h2>
+        <div class="feature-box">
+            <img src="assets/img/crown.png" alt="Crown" class="crown-image">
+            <h3>Designed by a Diverse Team of Experts</h3>
+            <p>Our program is crafted by a dynamic group of 13 professionals, aged between 21 and 33, including experienced recruiters, management professionals, M.Sc. and M.Tech graduates, MBA holders, bank officials, lawyers, architects, and even current students. This diversity ensures that Intern-Preneur addresses the needs of all career paths.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Inclusive and Accessible to All</h3>
+            <p>Intern-Preneur welcomes anyone over the age of 18, regardless of their background or career phase. Whether you're a student, graduate, professional, entrepreneur, or someone returning from a career break, you’ll find a community of like-minded individuals eager to learn, grow, and succeed together.</p>
+        </div>
+        <div class="feature-box">
+          <h3>Experiential Learning, Not Teaching</h3>
+          <p>We don’t have traditional teachers or trainers. Instead, we offer Learning Coordinators who guide your journey through experiential learning activities. They evaluate, mentor, and support you, ensuring you develop the skills needed to thrive in your career.</p>
+      </div>
+    </div>
+</section>
+
+
+<div class="enroll-section">
+  <div class="section-box">
+    <div class="text-content-ipdp">
+      <h2><del>Call now to Join</del><br>Let’s discuss to see if this program <br>helps you!</h2>
+    </div>
+    <div class="ipdp-content">
+      <a  href="tel:+91 97464 04046">
+        <button class="apply-button">Call Now</button>
+      </a>
+    </div>
+  </div>
+</div>
+<section class="unique-fts">
+  <div class="fts-container">
+      <h2 class="fts-title">Explore the Program!</h2>
+      <div class="fts-boxes" style="background-color: white;color: black; padding: 40px;">
+        <img src="assets/img/crown.png" alt="Crown" class="crown-image" style="top:65px">
+        <p>In today’s fast-paced world, degrees alone don’t guarantee success. Intern-Preneur empowers students, graduates, and professionals to refine their skills and advance their careers. Our exclusive online finishing school delivers the essential tools to help you stand out and succeed.</p>
+      </div>
+        <div class="fts-box">
+        <h3>Skill Realization & Development</h3>
+        <p>• Communication Skills<br>
+          • Confidence and Professionalism<br>
+          • Leadership and Teamwork<br>
+          • Timeliness</p>
+      </div>
+      <div class="fts-box">
+        <h3>Career Preparation</h3>
+        <p>• Recruitment Process Mastery<br>
+          • Resume, Cover Letter, LinkedIn Profile, and Interview Techniques<br>
+          • Job Search Strategies<br>
+          • Performance Appraisals</p>
+      </div>
+      <div class="fts-box">
+        <h3>Professional Skills</h3>
+        <p>• Email Management<br>
+          • Documentation & Presentation Skills<br>
+          • Netiquette: Online Communication Etiquette<br>
+          • Assessment & Feedback</p>
+      </div>
+      <div class="fts-box">
+        <h3>Career Growth & Guidance</h3>
+        <p>• Personalized Career Guidance<br>
+          • Personal Mentoring<br>
+          • Mental Health Awareness and Management<br></p>
+      </div>
+      <div class="fts-box">
+        <h3>Entrepreneurial Skills</h3>
+        <p>• Entrepreneurship Fundamentals<br>
+          • Branding & Personal Brand Building<br>
+          • Pitching & Presentation Skills<br>
+        </p>
+      </div>
+      <div class="fts-box">
+        <h3>Tools covered</h3>
+        <p>• Canva<br>
+          • Google Docs<br>
+          • Google Sheets<br>
+          • ChatGPT<br>
+          • LinkedIn<br>
+        </p>
+      </div>
+  </div>
+</section>
+      <!-- <section> -->
+          <!-- <div class="container">
+            <div class="row align-items-center">
+              <div class="col-md-6 text-md-start text-center py-6">
+                <h1 class="mb-4 fs-8 fw-bold " style="color: #695aa6">India’s Exclusive Online Finishing School</h1>
+                <p class="mb-4 lead fw-bold font-weight:600">
+                  to Enhance Careers for Students, Graduates, and Professionals
+                </p>
+                <p class="mb-6 lead">
+                  Unlock Your Career Potential: Develop key skills, enhance employability, and become recruitment-ready with practical, hands-on experience. Improve your resume, LinkedIn profile, and build confidence in communication, professionalism, and leadership - all in one comprehensive online program.
+                </p>
+                <div class="text-center text-md-start">
+                  <a class="btn btn-lg btn-primary me-3" href="https://wa.me/9746488303" role="button">Contact Us</a>
+                </div>
+              </div>
+              <div class="col-md-6 text-end">
+                <img class="pt-7 pt-md-0 img-fluid rounded " src="assets/img/10172518_8294.jpg" alt="Finishing School" />
+              </div>
+            </div>
+          </div>
+          -->
       <!-- </section> -->
       <!-- ============================================-->
       <!-- <section> begin ============================-->
 
-        <section class="pt-5" id="manager">
+        <!-- <section class="pt-5" id="manager">
           <div class="container">
             <div class="row">
               <div class="col-lg-6"><img class="img-fluid vanishimage" src="assets/img/manager/manager.png" alt="" /></div>
@@ -105,10 +867,10 @@
                 </div>
               </div>
             </div>
-          </div><!-- end of .container-->
-  
-        </section>
-          <div class="part">
+          </div>end of .container -->
+
+        <!-- </section> -->
+          <!-- <div class="part">
             <div class="partBox">
                 <div class="partContent">
                     <h3>Let's skill up while chilling out!</h3>
@@ -117,14 +879,13 @@
                         <button> <a style="text-decoration: none; text-align: center;align-items: center;" href="tel:9746488303">Call Now</a> </button>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- <section> close ============================-->
         <!-- ============================================-->
         <!-- ============================================-->
         <!-- <section> begin ============================-->
-      
           <!-- <section> -->
-            <div class="container">
+            <!-- <div class="container">
               <div class="row align-items-center">
                 <div class="col-md-5 text-md-start text-center align-items-center py-6">
                   <h1 class="mT-4 maintextau" style=" font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Authentic stories of our<br><span style="color: rgb(160, 12, 157);">Evolvers</span>; Watch the narratives resonate with their dreams, determinations, success, friendship, hope, and happiness!</h1>
@@ -136,11 +897,11 @@
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/fl_wEmAVesc?si=qUKX6QygwtqBCpn-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           <!-- </section> -->
           
-        <div class="code-container">
+        <!-- <div class="code-container">
           <div class="box" style="align-items: center; text-align: center;">
             <div class="content-video">
               <p  style="padding-bottom: 60px; font-size: 20px; text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-top: 20px; font-weight: 800;">Get a sneak peek into the life of an ordinary jobseeker with an <span style="color: rgb(160, 12, 157);">extraordinary</span> makeover! <br><span> Click to watch! </span></p>
@@ -159,123 +920,75 @@
         </div>
       </div>
       
-    </div>
+    </div> -->
 
-    <div class="part">
-      <div class="partBox">
-          <div class="partContent">
-              <h3>Know More about us!</h3>
-          </div>
-          <div class="readmore">   
-            <a style="text-decoration: none;"  href="https://wa.me/9746488303"> <button style="color: black;">Know More </button></a>
-          </div>
-      </div>
-  </div>
-    <section class="section" id="testmonial">
-      <div class="container text-center">
-          <p class="section-subtitle"></p>
-          <h1 class="fs-9 fw-bold mb-4 text-center">Feedback</h1>
-          <!-- row -->
-          <div class="row">
-              <div class="col-md-6">
-                  <div class="testimonial-card">
-                    <div class="testimonial-card-img-holder">
-                      <img src="assets/img/fe1.jpg" class="testimonial-card-img"  alt="se">
-                  </div>
-                      <div class="testimonial-card-body">
-                          <h6 class="testimonial-card-title">Shibi Prakash<br> <span>
-                            Finance Executive, Kollam
-                              </span></h6>
-                          <p class="testimonial-card-subtitle">This program helped me land my dream job. It boosted my confidence, enabling me to tackle tasks without overthinking and present myself professionally. Thanks to the program, I attended interviews confidently and successfully secured a position as a Senior Finance Executive in a great organization</p>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-6">
-                <div class="testimonial-card">
-                    <div class="testimonial-card-img-holder">
-                        <img src="assets/img/fe2.jpg" class="testimonial-card-img"  alt="se">
-                    </div>
-                    <div class="testimonial-card-body">
-                        <h6 class="testimonial-card-title">Vishnu Raj<br> <span>
-                          Food Technologist, Trivandrum
-
-                            </span></h6>
-                        <p class="testimonial-card-subtitle">IPDP assisted me in developing a recruiter's perspective and preparing for recruitment in the best possible way. It aided me in improving my professional communication skills, email communications, and developing a professional resume. This program helped me identify and improve my skills.
-                        </p>
-                    </div>
-                </div>
-                </div>
-              <div class="col-md-6 mx-auto">
-                  <div class="testimonial-card">
-                      <div class="testimonial-card-img-holder">
-                          <img src="assets/img/fe3.png" class="testimonial-card-img"
-                              alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                      </div>
-                      <div class="testimonial-card-body">
-                          <h6 class="testimonial-card-title">Aneesha Anilkumar<br> <span>
-                            Accountant, Ernakulam
-
-                              </span></h6>
-                          <p class="testimonial-card-subtitle">The program helped transform my resume significantly, and I started receiving multiple interview calls.  I could feel a newfound confidence in my communication skills. All of this played a crucial role in acing my interviews and landing a job that I'm genuinely excited about. IPDP helped me grow professionally and personally. The teamwork sessions were a different experience, making me an efficient and collaborative team member. I wholeheartedly recommend the IPDP.
-
-                          </p>
-                      </div>
-                  </div>                
-            </div>
-          </div>
-
-          </div>
-      </div> <!-- end of container -->
-  </section> <!-- end of testimonial section -->
-
-   
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="pt-5" id="validation">
-
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6">
-              <h2 class="mb-2 fs-7 fw-bold" style="font-family: 'Times New Roman', Times, serif;">What is Intern-Preneur Development Program?
-              </h2>
-              <p class="mb-4 fw-medium text-secondary mt-4" >
-                Intern-Preneur Development Program is an online experiential and adaptive learning program. It will boost your soft skills - think CCP; Communication, Confidence, and Professionalism. Plus, you will get real exposure to the real deal of the professional world and get all set for the recruitment process.  It's not just learning; it's living it! 
-              </p>
-              <p class="mb-4 fw-medium text-secondary">This is a transformative learning experience that combines real-world exposure with hands-on practice, ensuring you master essential soft skills</p>
-              <p class="mb-4 fw-medium text-secondary">Best part,
-                Imagine an online learning program that's actually fun — yep, that's IPDP. 
-                </p>
-              <div style="text-align: center;">
-                <p class="mb-2 fs-3 fw-bold">Ready to level up?</p>
-                <div class="text-center mt-3"><a class="btn contactBut me-3 btn-lg" style="text-decoration: none;" href="tel:9746488303" role="button">Call Now</a></div>
-              </div>
-
-            </div>
-            <div class="col-lg-6 vanishimage"><img class="img-fluid" src="assets/img/TRT Social Media.png" alt="" /></div>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,900" rel="stylesheet">
+    <div class="" style="background-image: url('assets/img/ipdpbg.png'); padding: 25px;">
+      <p class="mb-5 fs-7 fw-bold" style="text-align: center;color: white;">Program Structure
+      </p>
+      <!-- <p class="mb-5 fs-3 fw-bold" style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: rgb(49, 47, 47);">
+        Intern-Preneur Development Program
+      </p> -->
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <div class="carderr carderr-5">
+            <h3>Timings</h3>
+            <p>Evening - 08:00 pm to 09:00 pm & Daytime batches
+            </p>
           </div>
         </div>
-
-      </section>
-
-
-      <div class="dbox">
-        <div class="dtitle">Who is an Intern-Preneur?</div>
-        <div class="ddefinition">
-          <p style="font-weight: 900; color: rgb(255, 205, 57);">/ˈɪntɜːn-prəˈnɜː(r)/</p>
-            <p class="mt-3" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">“A student who works on every aspect of a project to gain practical experiences, acquire skills, and be mentored to enhance a professional career as an employee as well as an employer.”</p>
+        <div class="col-md-4">
+          <div class="carderr carderr-2">
+            <h3>Medium of Language</h3>
+            <p> English | Malayalam
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="carderr carderr-4">
+            <h3>Mode</h3>
+            <p>Online (With mic & cameras on!)
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="carderr carderr-1">
+            <h3>Duration</h3>
+            <p>4 weeks</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="carderr carderr-3">
+            <h3>Days</h3>
+            <p>Weekdays</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="carderr carderr-6">
+            <h3>Fees</h3>
+            <p> Rs. 3,990/- | Rs. 4,990/- | Rs. 5,990/- | Rs. 6,990/- (Instalment facility available)</p>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <div class="carderr carderr-7">
+            <h3>Success Kit</h3>
+            <p>Program Certificate | Evaluation Report | Skill Certificates | Performance Awards | Recommendations(Vary based on the packages)
+            </p>
+          </div>
+        </div>
         </div>
     </div>
 
     <section class="pt-5 pt-md-9 mb-6" id="feature">
 
-      <div class="bg-holder z-index--1 bottom-0 d-none d-lg-block" style="background-image:url(assets/img/category/shape.png);opacity:.5;">
+  <div class="bg-holder z-index--1 bottom-0 d-none d-lg-block" style="background-image:url(assets/img/category/shape.png);">
       </div>
       <!--/.bg-holder-->
 
       <div class="container">
-        <h1 class="fs-9 fw-bold mb-4 text-center">Uniqueness</h1>
+        <h1 class="fs-9 fw-bold mb-4 text-center" style="color: black;">Uniqueness</h1>
         <div class="row">
           <div class="col-lg-3 col-sm-6 mb-2">
             <div class="carddd ">
@@ -371,8 +1084,150 @@
       </div><!-- end of .container-->
 
     </section>
+    <!-- <div class="part">
+      <div class="partBox">
+          <div class="partContent">
+              <h3>Know More about us!</h3>
+          </div>
+          <div class="readmore">   
+            <a style="text-decoration: none;"  href="https://wa.me/9746488303"> <button style="color: black;">Know More </button></a>
+          </div>
+      </div>
+  </div> -->
+  <section class="section" id="testimonial">
+    <div class="container text-center">
+      <h1 class="fs-9 fw-bold mb-4 text-center" style="color: white;">Learners’ experiences!</h1>
+      <div class="row">
+        <!-- Testimonial Card 1 -->
+        
+  
+        <!-- Testimonial Card 2 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="testimonial-card">
+            <div class="testimonial-card-img-holder">
+              <img src="assets/img/tes2.png" class="testimonial-card-img" alt="Vishnu Raj">
+            </div>
+            <div class="testimonial-card-body">
+              <h6 class="testimonial-card-title">Anjali Murali<br><span>Software Engineer, United Kingdom</span></h6>
+              <p class="testimonial-card-subtitle">The Intern-Preneur program provided valuable insights into my skills and offered an awesome overall experience. It helped me craft my resume and LinkedIn profile while also focusing on developing additional professional skills. I'm grateful to have been part of such an amazing career development program. The program coordinators are ready to help us anytime. Overall, it was a fantastic learning experience for me.</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Testimonial Card 3 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="testimonial-card">
+            <div class="testimonial-card-img-holder">
+              <img src="assets/img/tes3.png" class="testimonial-card-img" alt="Aneesha Anilkumar">
+            </div>
+            <div class="testimonial-card-body">
+              <h6 class="testimonial-card-title">Sonia Azeez<br><span>Assistant Professor, Kollam</span></h6>
+              <p class="testimonial-card-subtitle">I'm immensely grateful for the Intern-Preneur Development Program (IPDP) by The Evolvers Project. It transformed my career confusion into newfound confidence. The sessions on LinkedIn, resume writing, and interviews were invaluable, enhancing my professional capabilities significantly. This impactful program equipped me with essential skills, reigniting my passion for my career goals. Thank you for this enriching opportunity.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="testimonial-card">
+            <div class="testimonial-card-img-holder">
+              <img src="assets/img/fe3.png" class="testimonial-card-img" alt="Aneesha Anilkumar">
+            </div>
+            <div class="testimonial-card-body">
+              <h6 class="testimonial-card-title">Aneesha Anilkumar<br><span>Accountant, Ernakulam</span></h6>
+              <p class="testimonial-card-subtitle">The program helped transform my resume significantly, and I started receiving multiple interview calls. I could feel a newfound confidence in my communication skills. All of this played a crucial role in acing my interviews and landing a job that I'm genuinely excited about. IPDP helped me grow professionally and personally. The teamwork sessions were a different experience, making me an efficient and collaborative team member. I wholeheartedly recommend the IPDP.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="testimonial-card">
+            <div class="testimonial-card-img-holder">
+              <img src="assets/img/tes4.png" class="testimonial-card-img" alt="Aneesha Anilkumar">
+            </div>
+            <div class="testimonial-card-body">
+              <h6 class="testimonial-card-title">Akshaya Babu<br><span>Structural Engineer, Dubai</span></h6>
+              <p class="testimonial-card-subtitle">I truly appreciate the invaluable insights and advice on crafting an impactful resume and cultivating a powerful LinkedIn profile—both of which are essential for initiating a progressive career. Engaging in discussions about business idea development allowed me to interact effectively and hone my communication and leadership skills. Throughout the program, numerous enlightening sessions delved into socially relevant topics such as mental development and financial growth. This program has expedited my growth in many ways, offering me achievements that might have taken years or remained unattained. </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="testimonial-card">
+            <div class="testimonial-card-img-holder">
+              <img src="assets/img/tes1.png" class="testimonial-card-img" alt="Shibi Prakash">
+            </div>
+            <div class="testimonial-card-body">
+              <h6 class="testimonial-card-title">Savio Jacob<br><span> BDS Student, Ernakulam</span></h6>
+              <p class="testimonial-card-subtitle">Evolvers is the best place to rediscover yourself! I had a wonderful experience during my Intern-Preneur journey where I was taught how to work in a much more systematic and professional method. I've also learned to manage my time efficiently and speak articulately with confidence. The specially curated activities and assignments gave me a lot of different insights and perspectives to approach problems and solve them. I've picked up on a bit of designing too! Looking back, the only word that comes to my mind when I think of Evolvers is Family.If you are looking for a restart in life, to grow and evolve, look no further!</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="testimonial-card">
+            <div class="testimonial-card-img-holder">
+              <img src="assets/img/fe1.jpg" class="testimonial-card-img" alt="Aneesha Anilkumar">
+            </div>
+            <div class="testimonial-card-body">
+              <h6 class="testimonial-card-title">Shibi Prakash<br><span>Finance Executive, Kollam</span></h6>
+              <p class="testimonial-card-subtitle">This program helped me land my dream job. It boosted my confidence, enabling me to tackle tasks without overthinking and present myself professionally. Thanks to the program, I attended interviews confidently and successfully secured a position as a Senior Finance Executive in a great organization</p>
+            </div>
+          </div>
+        </div>
 
-    <section class="pt-5" id="marketer">
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="testimonial-card">
+            <div class="testimonial-card-img-holder">
+              <img src="assets/img/fe2.jpg" class="testimonial-card-img" alt="Aneesha Anilkumar">
+            </div>
+            <div class="testimonial-card-body">
+              <h6 class="testimonial-card-title">Vishnu Raj<br><span>Food Technologist, Trivandrum</span></h6>
+              <p class="testimonial-card-subtitle">IPDP assisted me in developing a recruiter's perspective and preparing for recruitment in the best possible way. It aided me in improving my professional communication skills, email communications, and developing a professional resume. This program helped me identify and improve my skills.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <!-- <section class="pt-5" id="validation">
+
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <h2 class="mb-2 fs-7 fw-bold" style="font-family: 'Times New Roman', Times, serif;">What is Intern-Preneur Development Program?
+              </h2>
+              <p class="mb-4 fw-medium text-secondary mt-4" >
+                Intern-Preneur Development Program is an online experiential and adaptive learning program. It will boost your soft skills - think CCP; Communication, Confidence, and Professionalism. Plus, you will get real exposure to the real deal of the professional world and get all set for the recruitment process.  It's not just learning; it's living it! 
+              </p>
+              <p class="mb-4 fw-medium text-secondary">This is a transformative learning experience that combines real-world exposure with hands-on practice, ensuring you master essential soft skills</p>
+              <p class="mb-4 fw-medium text-secondary">Best part,
+                Imagine an online learning program that's actually fun — yep, that's IPDP. 
+                </p>
+              <div style="text-align: center;">
+                <p class="mb-2 fs-3 fw-bold">Ready to level up?</p>
+                <div class="text-center mt-3"><a class="btn contactBut me-3 btn-lg" style="text-decoration: none;" href="tel:9746488303" role="button">Call Now</a></div>
+              </div>
+
+            </div>
+            <div class="col-lg-6 vanishimage"><img class="img-fluid" src="assets/img/TRT Social Media.png" alt="" /></div>
+          </div>
+        </div>
+
+      </section> -->
+
+
+      <!-- <div class="dbox">
+        <div class="dtitle">Who is an Intern-Preneur?</div>
+        <div class="ddefinition">
+          <p style="font-weight: 900; color: rgb(255, 205, 57);">/ˈɪntɜːn-prəˈnɜː(r)/</p>
+            <p class="mt-3" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">“A student who works on every aspect of a project to gain practical experiences, acquire skills, and be mentored to enhance a professional career as an employee as well as an employer.”</p>
+        </div>
+    </div> -->
+
+
+
+    <!-- <section class="pt-5" id="marketer">
   
       <div class="container">
         <div class="row">
@@ -387,68 +1242,10 @@
         </div>
       </div>
 
-    </section>
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,900" rel="stylesheet">
-<div class="container">
-  <p class="mb-5 fs-7 fw-bold" style="text-align: center;">Program in a nutshell
-  </p>
-  <p class="mb-5 fs-3 fw-bold" style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: rgb(49, 47, 47);">
-    Intern-Preneur Development Program
-  </p>
-  <div class="row mb-3">
-    <div class="col-md-4">
-      <div class="carderr carderr-3">
-        <h3>Timing</h3>
-        <p>Evening and Daytime batches are also available</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="carderr carderr-2">
-        <h3>Language</h3>
-        <p>Malayalam and English <br>More languages coming soon!
-        </p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="carderr carderr-4">
-        <h3>Platform</h3>
-        <p>Google Meet (of course, with cameras on!)
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="row mb-3">
-    <div class="col-md-4">
-      <div class="carderr carderr-1">
-        <h3>Duration</h3>
-        <p>5 weeks</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="carderr carderr-5">
-        <h3>Time</h3>
-        <p>1 hour (Evening batches 07:30 pm & 09:00 pm | Daytime batches flexible timings)
-        </p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="carderr carderr-6">
-        <h3>Cost</h3>
-        <p>INR 3990 and INR 5490 </p>
-      </div>
-    </div>
-  </div>
-  <div class="row mb-3">
-    <div class="col-md-4">
-      <div class="carderr carderr-7">
-        <h3>Payment</h3>
-        <p>Installment facilities are available.
-        </p>
-      </div>
-    </div>
-    </div>
-</div>
+    </section> -->
 
+
+<!-- 
 <div class="dbox">
   <div class="dtitle mb-5" style="text-align: center; font-weight: 800;">Who all can join</div>
   <div class="dcontainer">
@@ -470,27 +1267,27 @@
 
 </div>
   </div>
-</div>
+</div> -->
 
 
 <div class="container mt-5">
   <div class="row mb-3 text-center">  
     <div class="col-md-4 mb-5 mt-3">
       <div class="card ">
-        <h1 style="font-size: 45px;">35  </h1>
+        <h1 style="font-size: 45px; color: black;">36</h1>
         <p>Batches</p>
       </div>  
     </div>
     <div class="col-md-4 mb-5 mt-3">
       <div class="card">
-        <h1 style="font-size: 45px;">99.8</h1>
+        <h1 style="font-size: 45px;color: black;">99.8</h1>
         <p>⭐⭐⭐⭐⭐</p>
         <p>5 Star Ratings on Google</p>
       </div>  
     </div>
     <div class="col-md-4 mb-5 mt-3">
       <div class="card ">
-        <h1 style="font-size: 45px;">350  </h1>
+        <h1 style="font-size: 45px;color: black;">350</h1>
         <p>Certified Internpreneurs</p>
       </div>  
     </div>
@@ -498,6 +1295,62 @@
   </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  // Get the modal
+  console.log('inside')
+  var modal = document.getElementById("registrationModal");
+
+  // Get the button that opens the modal
+  var btn = document.getElementById("openModal");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks the button, open the modal 
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+
+
+  var modal = document.getElementById("registrationModal");
+
+  // Get the button that opens the modal
+  var btn = document.getElementById("opRegMod");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks the button, open the modal 
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
 <script>
 $(document).ready(function() {
     $('#submit').click(function(event) {

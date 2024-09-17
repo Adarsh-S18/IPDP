@@ -4850,7 +4850,7 @@ p {
   right: 0;
   width: 50px;
   height: 50px;
-  background: #FF0038;
+  background: #570080;
   clip-path: 
     polygon(0 0, 100% 0, 100% 100%);
   transition: 
@@ -4888,57 +4888,66 @@ p {
   }
 }
 /* testmonial card */
-.testimonial-card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 30px;
+/* Container setup */
+#testimonial {
+  padding: 60px 0;
+  background-image: url('../img/ipdpbg.png');
 }
 
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive columns */
+  gap: 20px; /* Space between cards */
+}
+
+/* Testimonial card styling */
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Testimonial image holder */
 .testimonial-card-img-holder {
-  min-width: 45px;
-  max-width: 45px;
-  z-index: 999;
+  text-align: center;
+  margin-bottom: 15px;
 }
 
 .testimonial-card-img {
-  background: #fff;
-  padding: 4px;
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
-.testimonial-card-body {
-  text-align: left;
-  border: 1px solid #dee2e6;
-  background: #fff;
-  padding: 20px 20px 20px 60px;
-  border-radius: 0;
-}
-
+/* Card title and body styling */
 .testimonial-card-title {
-  margin-top: 20px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
-  font-size: calc(15px + (18 - 14) * ((100vw - 300px) / (1300 - 300)));
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.testimonial-card-title span{
-  font-size: 13px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  opacity: 0.9;
+.testimonial-card-title span {
+  font-size: 14px;
+  color: #666;
 }
-.testimonial-card-subtitle{
-  font-size: 12px;
-  font-weight: 500;
-  
+
+.testimonial-card-subtitle {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
 }
+
+/* General spacing between cards */
+.testimonial-card-body {
+  flex-grow: 1;
+}
+
+
 
 /* Styling for individual boxes */
 .box {
@@ -18004,7 +18013,9 @@ main {
 .carderr{
     border-radius: 4px;
     font-size: 13px;
+    min-height: 160px;
     background: #fff;
+    margin-bottom: 10px;
     box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
       transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
   padding: 14px 80px 18px 36px;
@@ -18028,17 +18039,17 @@ main {
 }
 
 .carderr-2{
-  background-image: url(https://st.depositphotos.com/33945136/57405/v/450/depositphotos_574056268-stock-illustration-translator-icon-vector-illustration.jpg); 
+  background-image: url(https://static.vecteezy.com/system/resources/previews/016/314/366/original/language-translation-icon-free-png.png); 
       background-repeat: no-repeat;
     background-position: right;
-    background-size: 60px;
+    background-size: 100px;
 }
 
 .carderr-1{
-   background-image: url(https://cdn-icons-png.flaticon.com/512/1479/1479651.png);
+   background-image: url(https://png.pngtree.com/png-vector/20220716/ourmid/pngtree-clock-icon-vector-png-png-image_5966528.png);
       background-repeat: no-repeat;
     background-position: right;
-    background-size: 60px;
+    background-size: 100px;
 }
 
 
@@ -18050,10 +18061,10 @@ main {
     background-size: 80px;
 }
 .carderr-4{
-  background-image: url(https://cdn.worldvectorlogo.com/logos/google-meet-icon-2020-.svg); 
+  background-image: url(https://static-00.iconduck.com/assets.00/google-meet-icon-2048x2048-js4zjooy.png); 
       background-repeat: no-repeat;
     background-position: right;
-    background-size: 60px;
+    background-size: 90px;
 }
 .carderr-5{
   background-image: url(https://img.freepik.com/premium-vector/sand-hourglass-vector-icon-isolated-white_88813-1506.jpg?w=2000); 
@@ -18518,3 +18529,6 @@ margin-top:50px;
     font-size: 12px;
     }
 }
+
+
+
