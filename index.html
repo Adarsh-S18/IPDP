@@ -931,23 +931,9 @@ p {
       </p> -->
       <div class="row mb-3">
         <div class="col-md-4">
-          <div class="carderr carderr-5">
-            <h3>Timings</h3>
-            <p>Evening - 08:00 pm to 09:00 pm & Daytime batches
-            </p>
-          </div>
-        </div>
-        <div class="col-md-4">
           <div class="carderr carderr-2">
             <h3>Medium of Language</h3>
             <p> English | Malayalam
-            </p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="carderr carderr-4">
-            <h3>Mode</h3>
-            <p>Online (With mic & cameras on!)
             </p>
           </div>
         </div>
@@ -958,24 +944,33 @@ p {
           </div>
         </div>
         <div class="col-md-4">
-          <div class="carderr carderr-3">
-            <h3>Days</h3>
-            <p>Weekdays</p>
+          <div class="carderr carderr-5">
+            <h3>Days & Timings</h3>
+            <p> Weekdays | Evening - 08:00 pm to 09:00 pm & Daytime batches
+            </p>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="carderr carderr-6">
-            <h3>Fees</h3>
-            <p> Rs. 3,990/- | Rs. 4,990/- | Rs. 5,990/- | Rs. 6,990/- (Installment facility available)</p>
-          </div>
-        </div>
+
       </div>
       <div class="row mb-3">
+        <div class="col-md-4">
+          <div class="carderr carderr-4">
+            <h3>Mode</h3>
+            <p>Online (With mic & cameras on!)
+            </p>
+          </div>
+        </div>
         <div class="col-md-4">
           <div class="carderr carderr-7">
             <h3>Success Kit</h3>
             <p>Program Certificate | Evaluation Report | Skill Certificates | Performance Awards | Recommendations(Vary based on the packages)
             </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="carderr carderr-6">
+            <h3>Fees</h3>
+            <p> Rs. 3,990/- | Rs. 4,990/- | Rs. 6,990/- (Pay in Parts, Learn in Full)</p>
           </div>
         </div>
         </div>
@@ -1162,6 +1157,17 @@ p {
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="testimonial-card">
             <div class="testimonial-card-img-holder">
+              <img src="assets/img/test1.png" class="testimonial-card-img" alt="Aneesha Anilkumar">
+            </div>
+            <div class="testimonial-card-body">
+              <h6 class="testimonial-card-title">Anjana Subramanian<br><span>Law Graduate, Malappuram</span></h6>
+              <p class="testimonial-card-subtitle">IPDP is a very different program and one of the best programs I have come across. There will be many people who blame us for our negative side, but no one will understand what our positive side is. But, through the "one-on-one" session in this program, I was made to understand very crisply and clearly what's my positive side and what needs improvement in my character or behaviour. No one judges us badly here. It was very interesting to interact with people of different age groups. I am proud to be a certified Intern-Preneur. </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="testimonial-card">
+            <div class="testimonial-card-img-holder">
               <img src="assets/img/fe1.jpg" class="testimonial-card-img" alt="Aneesha Anilkumar">
             </div>
             <div class="testimonial-card-body">
@@ -1179,6 +1185,17 @@ p {
             <div class="testimonial-card-body">
               <h6 class="testimonial-card-title">Vishnu Raj<br><span>Food Technologist, Trivandrum</span></h6>
               <p class="testimonial-card-subtitle">IPDP assisted me in developing a recruiter's perspective and preparing for recruitment in the best possible way. It aided me in improving my professional communication skills, email communications, and developing a professional resume. This program helped me identify and improve my skills.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="testimonial-card">
+            <div class="testimonial-card-img-holder">
+              <img src="assets/img/test2.png" class="testimonial-card-img" alt="Aneesha Anilkumar">
+            </div>
+            <div class="testimonial-card-body">
+              <h6 class="testimonial-card-title">Junaid Anshad<br><span>Law Graduate, Kottayam</span></h6>
+              <p class="testimonial-card-subtitle">I had a great experience with Evolvers. Even when I contacted them, their communications were clear, honest and punctual. Later, as a member of the IPDP program, I found it useful in my personal and professional life. The activities and tasks they conduct complement in improving ourselves as a part of a team. It helps us express ourselves without inhibitions and in gaining self-confidence. As the name suggests, everyone who undergoes this programme will evolve and become better. </p>
             </div>
           </div>
         </div>
@@ -1352,57 +1369,52 @@ p {
 </script>
 
 <script>
-$(document).ready(function() {
-    $('#submit').click(function(event) {
-        event.preventDefault(); // Prevents the default form submission
-
-        var leadName = $('#firstName').val();
-        var leadLastName = $('#lastName').val();
-        var leadEmail = $('#email').val();
-        var leadMobile = $('#phone').val();
-        var leadMessage = $('#message').val();
-
-        // Check if any field is empty
-        if (leadName && leadLastName && leadEmail && leadMobile && leadMessage) {
-          window.location.href = 'thank-you.html';
-            var settings = {
-                url: "https://us-central1-ipdp-7baf7.cloudfunctions.net/sendMailOverHTTP",
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                data: JSON.stringify({
-                    "firstName": leadName,
-                    "lastName": leadLastName,
-                    "email": leadEmail,
-                    "phone": leadMobile,
-                    "message": leadMessage
-                })
-            };
-
-            // Send the AJAX request
-            $.ajax(settings)
-                .done(function(response) {
-                    console.log(response);
-                    window.location.href = 'thank-you.html';
-                    document.getElementById('myForm').reset();
-                })
-                .fail(function(xhr, status, error) {
-                    console.error(xhr, status, error);
-                });
-        } else {
-          Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Please fill in all fields before submitting!'
-            });
-        }
-    });
-});
-
-
-
-</script>
+  $(document).ready(function() {
+      $('#submit').click(function(event) {
+          event.preventDefault(); // Prevents the default form submission
+  
+          var leadName = $('#firstName').val();
+          var leadLastName = $('#lastName').val();
+          var leadEmail = $('#email').val();
+          var leadMobile = $('#phoneNumber').val();
+          var leadMessage = $('#message').val();
+  
+          // Check if any field is empty
+          if (leadName && leadLastName && leadEmail && leadMobile && leadMessage) {
+              var settings = {
+                  url: "https://us-central1-ipdp-7baf7.cloudfunctions.net/sendMailOverHTTP",
+                  method: "POST",
+                  headers: {
+                      "Content-Type": "application/json"
+                  },
+                  data: JSON.stringify({
+                      "firstName": leadName,
+                      "lastName": leadLastName,
+                      "email": leadEmail,
+                      "phone": leadMobile,
+                      "message": leadMessage
+                  })
+              };
+              console.log(settings)
+              // Send the AJAX request
+              $.ajax(settings)
+                  .done(function(response) {
+                      document.getElementById('myForm').reset();
+                      window.location.href = 'thank-you.html';
+                  })
+                  .fail(function(xhr, status, error) {
+                      console.error(xhr, status, error);
+                  });
+          } else {
+              Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'Please fill in all fields before submitting!'
+              });
+          }
+      });
+  });
+  </script>
 
 <body> 
 	<div class="container" id="contactform">
@@ -1423,7 +1435,7 @@ $(document).ready(function() {
               </div>
               <div class="clearfix">
                   <input class="col2 first" id="email" required type="email" name="Email" placeholder="Email">
-                  <input class="col2 last" id="phone" required type="text" name="Contact Number" placeholder="Contact Number">
+                  <input class="col2 last" id="phoneNumber" required type="text" name="Contact Number" placeholder="Contact Number">
               </div>
               <div class="clearfix">
                   <textarea name="message" id="message" cols="30" rows="7" placeholder="Your Message Here.." ></textarea>
@@ -1557,7 +1569,7 @@ $(document).ready(function() {
                                 <a href="index.html"><img src="assets/img/16 (1).png" class="img-fluid" alt="logo"></a>
                             </div>
                             <div class="footer-text">
-                                <p>The Evolvers Project is a new-age finishing school for you to evolve more authentically as a person, citizen, and professional with values, great self-esteem and confidence.</p>
+                                <p>The Evolvers Project is a transformative educational initiative focused on nurturing insightful, compassionate, and professionally equipped individuals for a brighter, more humane future.</p>
                             </div>
                             <div class="footer-social-icon">
                                 <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
