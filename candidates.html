@@ -30,6 +30,15 @@
     margin: 0 auto;
     padding: 20px;
 }
+.navbar .navimage {
+  content: url('assets/img/ipdp-logo2.png'); /* Light mode logo */
+}
+
+@media (prefers-color-scheme: dark) {
+  .navbar .navimage {
+    content: url('assets/img/ipdp-logo3.png'); /* Dark mode logo */
+  }
+}
 
 /* Other CSS remains as is */
 

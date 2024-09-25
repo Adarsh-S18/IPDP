@@ -18,6 +18,15 @@
     </script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
     <style>
+      .navbar .navimage {
+  content: url('assets/img/ipdp-logo2.png'); /* Light mode logo */
+}
+
+@media (prefers-color-scheme: dark) {
+  .navbar .navimage {
+    content: url('assets/img/ipdp-logo3.png'); /* Dark mode logo */
+  }
+}
         .blog-card {
             border: 1px solid #ddd;
             border-radius: 5px;
