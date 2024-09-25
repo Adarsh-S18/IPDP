@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog 3</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script> -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function(){
+     emailjs.init({
+       publicKey: "4tZdtvvCiMoT9UxgA",
+     });
+   })();
+    </script>
     <link href="assets/css/theme.css" rel="stylesheet" />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
          <style>
@@ -42,6 +53,91 @@
         .content-section ul li {
             margin-bottom: 10px;
         }
+        
+           /* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000; /* Ensures modal is on top of other elements */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Slightly darker overlay */
+}
+
+.modal-content {
+  background-color: white;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%; /* Default width for small screens */
+  max-width: 500px; /* Max width for larger screens */
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); /* Centers the modal vertically */
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus {
+  color: black;
+  cursor: pointer;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content label, .modal-content input, .modal-content select {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.modal-content input[type="text"], .modal-content input[type="email"], .modal-content input[type="tel"], .modal-content select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal-content input[type="submit"] {
+  background-color: #570080;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.modal-content input[type="submit"]:hover {
+  background-color: #450066;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+  }
+
+  .modal-content label, .modal-content input, .modal-content select {
+    font-size: 14px;
+  }
+
+  .modal-content input[type="submit"] {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
     </style>
 </head>
 <body>
@@ -116,6 +212,83 @@
         <p>At Intern-Preneur, we understand the complexities of career transitions and offer tailored programs to help professionals develop the skills and confidence needed to succeed in a new field. Remember, the more informed you are, the better your chances of making a successful career change.</p>
         <p><strong>Ready for your career switch? Prepare yourself with the right tools, patience, and mindset for success.</strong></p>
     </div>
+    <div id="registrationModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Registration Form</h2>
+        <form id="registrationForm">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+          
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" required>
+          
+          <label for="profession">Current Profession / Education</label>
+          <input type="text" id="profession" name="profession" required>
+    
+          <label for="location">Location</label>
+          <input type="text" id="location" name="location" required>
+    
+          <label for="reference">Reference (Optional)</label>
+          <input type="text" id="reference" name="reference">
+    
+          <input type="submit" value="Register">
+        </form>
+      </div>
+  </div>
+
+  <script type="text/javascript">
+      document.getElementById('registrationForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+    
+        const formData = {
+          name: document.getElementById('name').value,
+          phone: document.getElementById('phone').value,
+          profession: document.getElementById('profession').value,
+          location: document.getElementById('location').value,
+          reference: document.getElementById('reference').value
+        };
+    
+        emailjs.send("service_qvolj5l", "template_vjzggrr", formData)
+          .then(function(response) {
+            $('#registrationForm')[0].reset();
+            $('#registrationModal').hide();
+            alert('Email sent successfully!');
+          })
+          .catch(function(error) {
+            console.error("Failed to send email:", error);
+            alert('Failed to send email. Please try again later.');
+          });
+      });
+    </script>
+
+<script>
+  // Get the modal      
+  var modal = document.getElementById("registrationModal");
+
+  // Get the button that opens the modal
+  var btn = document.getElementById("opRegMod");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks the button, open the modal 
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
     <!-- Add Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
